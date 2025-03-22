@@ -1,125 +1,125 @@
-# Discord Music Bot
+# Bot de Música para Discord
 
-A feature-rich Discord music bot that can play music from YouTube and Spotify.
+Um bot de Discord rico em recursos que pode reproduzir música do YouTube e Spotify.
 
-## Features
+## Funcionalidades
 
-- Play music from YouTube URLs or search queries
-- Support for Spotify tracks, playlists, and albums
-- Queue management system
-- Multi-server support
-- Basic music controls (play, pause, resume, stop)
-- OpenAPI/Swagger documentation for commands
+- Reprodução de música a partir de URLs do YouTube ou consultas de pesquisa
+- Suporte para faixas, playlists e álbuns do Spotify
+- Sistema de gerenciamento de fila
+- Suporte a múltiplos servidores
+- Controles básicos de música (reproduzir, pausar, retomar, parar)
+- Documentação OpenAPI/Swagger para comandos
 
-## Requirements
+## Requisitos
 
-- Python 3.8 or higher
-- FFmpeg installed on your system
-- Discord Bot Token
-- (Optional) Spotify API credentials for Spotify functionality
+- Python 3.8 ou superior
+- FFmpeg instalado no seu sistema
+- Token de Bot do Discord
+- (Opcional) Credenciais da API do Spotify para funcionalidade do Spotify
 
-## Installation
+## Instalação
 
-1. Clone this repository:
+1. Clone este repositório:
    ```
-   git clone <repository-url>
+   git clone <url-do-repositório>
    cd disc-bot
    ```
 
-2. Install required Python packages:
+2. Instale os pacotes Python necessários:
    ```
    pip install -r requirements.txt
    ```
 
-3. Install FFmpeg:
-   - **Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html) and add it to your PATH
+3. Instale o FFmpeg:
+   - **Windows**: Baixe do [ffmpeg.org](https://ffmpeg.org/download.html) e adicione-o ao seu PATH
    - **Linux (Debian/Ubuntu)**: `sudo apt install ffmpeg`
    - **macOS**: `brew install ffmpeg`
 
-4. Configure your bot:
-   - Create a `.env` file in the project root (see `.env.example`)
-   - Add your Discord Bot Token and Spotify credentials to the `.env` file
-   - Get your Discord Bot Token from [Discord Developer Portal](https://discord.com/developers/applications)
-   - (Optional) Get Spotify API credentials from [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/)
+4. Configure seu bot:
+   - Crie um arquivo `.env` na raiz do projeto (veja `.env.example`)
+   - Adicione seu Token de Bot do Discord e credenciais do Spotify ao arquivo `.env`
+   - Obtenha seu Token de Bot do Discord no [Portal de Desenvolvedor do Discord](https://discord.com/developers/applications)
+   - (Opcional) Obtenha credenciais da API do Spotify no [Painel de Desenvolvedor do Spotify](https://developer.spotify.com/dashboard/)
 
-## Configuration
+## Configuração
 
-In your `.env` file, add the following:
+No seu arquivo `.env`, adicione o seguinte:
 ```
-DISCORD_TOKEN=your_discord_token_here
-SPOTIFY_CLIENT_ID=your_spotify_client_id_here
-SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+DISCORD_TOKEN=seu_token_do_discord_aqui
+SPOTIFY_CLIENT_ID=seu_client_id_do_spotify_aqui
+SPOTIFY_CLIENT_SECRET=seu_client_secret_do_spotify_aqui
 ```
 
-You can also customize other settings in `config.py` such as the command prefix.
+Você também pode personalizar outras configurações no arquivo `config.py`, como o prefixo de comando.
 
-## Usage
+## Uso
 
-1. Start the bot:
+1. Inicie o bot:
    ```
    python main.py
    ```
 
-2. Invite the bot to your server using the OAuth2 URL from Discord Developer Portal
+2. Convide o bot para seu servidor usando a URL OAuth2 do Portal de Desenvolvedor do Discord
 
-3. Use the following commands:
-   - `!join` - Connect to your voice channel
-   - `!leave` - Disconnect from voice channel
-   - `!play <url or search query>` - Play from YouTube URL or search
-   - `!play <spotify url>` - Play from Spotify URL (track, playlist, album)
-   - `!pause` - Pause current playback
-   - `!resume` - Resume paused playback
-   - `!stop` - Stop playback and clear queue
-   - `!skip` - Skip to next song
-   - `!queue` - Show current queue
-   - `!clear` - Clear the queue
-   - `!ping` - Check bot latency
+3. Use os seguintes comandos:
+   - `!join` - Conectar ao seu canal de voz
+   - `!leave` - Desconectar do canal de voz
+   - `!play <url ou termo de pesquisa>` - Reproduzir a partir de URL do YouTube ou pesquisa
+   - `!play <url do spotify>` - Reproduzir a partir de URL do Spotify (faixa, playlist, álbum)
+   - `!pause` - Pausar reprodução atual
+   - `!resume` - Retomar reprodução pausada
+   - `!stop` - Parar reprodução e limpar fila
+   - `!skip` - Pular para a próxima música
+   - `!queue` - Mostrar fila atual
+   - `!clear` - Limpar a fila
+   - `!ping` - Verificar latência do bot
 
-## API Documentation (Swagger/OpenAPI)
+## Documentação da API (Swagger/OpenAPI)
 
-The bot comes with a Swagger/OpenAPI documentation file that describes all commands as if they were API endpoints. This provides a clear and visual representation of the available commands.
+O bot vem com um arquivo de documentação Swagger/OpenAPI que descreve todos os comandos como se fossem endpoints de API. Isso fornece uma representação clara e visual dos comandos disponíveis.
 
-To view the documentation:
+Para visualizar a documentação:
 
-1. Copy the contents of `commands_api.yaml`
-2. Paste them into an online Swagger UI editor like [Swagger Editor](https://editor.swagger.io/)
-3. The documentation will render in a user-friendly interface, showing all commands, parameters, and responses
+1. Copie o conteúdo do arquivo `commands_api.yaml`
+2. Cole-o em um editor online de Swagger UI como o [Swagger Editor](https://editor.swagger.io/)
+3. A documentação será renderizada em uma interface amigável, mostrando todos os comandos, parâmetros e respostas
 
-Alternatively, you can use tools like [Redocly](https://redocly.github.io/redoc/) or [SwaggerHub](https://app.swaggerhub.com/) to render the documentation.
+Alternativamente, você pode usar ferramentas como [Redocly](https://redocly.github.io/redoc/) ou [SwaggerHub](https://app.swaggerhub.com/) para renderizar a documentação.
 
-This API documentation serves as a helpful reference for understanding:
-- All available commands
-- Required parameters
-- Possible responses
-- Command categorization
+Esta documentação da API serve como uma referência útil para entender:
+- Todos os comandos disponíveis
+- Parâmetros necessários
+- Possíveis respostas
+- Categorização de comandos
 
-## Discord Permissions
+## Permissões do Discord
 
-The bot requires these permissions:
-- View Channels
-- Send Messages
-- Read Message History
-- Connect to Voice Channels
-- Speak in Voice Channels
+O bot requer estas permissões:
+- Ver Canais
+- Enviar Mensagens
+- Ler Histórico de Mensagens
+- Conectar a Canais de Voz
+- Falar em Canais de Voz
 
-## Troubleshooting
+## Solução de Problemas
 
-- **Bot doesn't join voice channel**: Make sure it has permission to join voice channels
-- **No sound**: Check if FFmpeg is properly installed
-- **Spotify doesn't work**: Verify your Spotify API credentials in the `.env` file
-- **Bot disconnects**: This could be due to internet connection issues or Discord API limitations
-- **Token errors**: Make sure your `.env` file is set up correctly and the token is valid
+- **Bot não entra no canal de voz**: Certifique-se de que ele tem permissão para entrar em canais de voz
+- **Sem som**: Verifique se o FFmpeg está instalado corretamente
+- **Spotify não funciona**: Verifique suas credenciais da API do Spotify no arquivo `.env`
+- **Bot desconecta**: Isso pode ser devido a problemas de conexão com a internet ou limitações da API do Discord
+- **Erros de token**: Certifique-se de que seu arquivo `.env` está configurado corretamente e o token é válido
 
-## Security
+## Segurança
 
-- The `.env` file contains sensitive information and is included in `.gitignore`
-- Never commit your tokens or API keys to version control
-- If you accidentally expose your Discord token, regenerate it immediately in the Discord Developer Portal
+- O arquivo `.env` contém informações sensíveis e está incluído no `.gitignore`
+- Nunca envie seus tokens ou chaves de API para o controle de versão
+- Se você expor acidentalmente seu token do Discord, regenere-o imediatamente no Portal de Desenvolvedor do Discord
 
-## Contributing
+## Contribuições
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes. 
